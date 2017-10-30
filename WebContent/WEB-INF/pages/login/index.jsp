@@ -41,14 +41,14 @@
                     </ul>
                     <ul>
                         <li class="row1">验证码：</li>
-                        <li class="row2"><input class="input" id="verify_code" size="10" name="verify_code" type="text" onkeydown="javascript:KeyDown(event, 'commitButton')" />
-                        <img src="/index.php/Public/verifyCode.html" id="codeImg"  title="看不清？单击此处刷新" onclick="this.src+='?rand='+Math.random();"  style="cursor: pointer; vertical-align: middle;"/></li>
+                        <li class="row2"><input class="input" id="captcha" size="10" name="captcha" type="text" onkeydown="javascript:KeyDown(event, 'commitButton')" />
+                        <img id="codeImg"  src="/CaptchaLogin/checkcode"  onclick="this.src+='?rand='+Math.random();"   title="看不清？单击此处刷新"   style="cursor: pointer; vertical-align: middle;"/></li>
                     </ul>
                 </div>
             <input type="hidden" name="__hash__" value="4327d5c993e8aff6cb1bcd179c4fc691_7f5799ed5bf1ae9ee1b90fc21772b7ff" /></form>
             <div class="clear"></div>
             <div class="operation"><button id="commitButton" class="btn submit">登录</button>
-                <button class="btn findPwd" onclick=location.href="/index.php/Public/resetPassword.html">找回密码</button>
+                <button class="btn findPwd" onclick=location.href="/">找回密码</button>
                 <br>为保证优质体验，请使用Chrome(谷歌)或Firefox(火狐)浏览器
                 </div>
         </div>
@@ -98,9 +98,8 @@
                     $("#commitButton").text('登录');
                     return false;
                 }
-                commonAjaxSubmit("/index.php/Public/login.html",'',$("#commitButton"));
+                commonAjaxSubmit("/",'',$("#commitButton"));
             });
-
             var explorer = navigator.userAgent;
             var supported = false;
             if (explorer.indexOf("Firefox") >= 0
@@ -111,7 +110,21 @@
             if (!supported) {
                 popup.alert("为保证优质体验，请使用Chrome(谷歌)或Firefox(火狐)浏览器！");
             }
-
+            
+            //切换验证码
+            
+            //$("#codeImg").click(function(){
+            	
+             //	$.ajax({
+            	 	
+            	//	type:"POST",
+            	//	url:"checkcode",
+            //		async:false,
+            	//	success:function(data){
+            		//	$("#codeImg").html = data;
+            	//	}
+            //	})
+            //});
         });
     </script>
 
