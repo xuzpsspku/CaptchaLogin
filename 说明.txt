@@ -1,0 +1,10 @@
+1.CaptchaLogin项目为普通验证码的登录系统
+2.Kaptcha为使用了开源kaptcha的验证码的登录系统
+3.pytesser为python的第三方pytesser模块，使用时import
+  文件夹里的pytesser.py即可
+4.python code文件夹里的recimg.py为使用pytesser的识别
+  验证码的程序，img文件夹里为测试图片
+
+5.项目文档为本课程开题文档，开题PPT和最终的项目汇报
+  文档以及项目汇报PPT
+
